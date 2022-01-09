@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Minimal Django File Upload Example</title>
+  </head>
+
+  <body>
+    <form action="{% url "home-view" %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ message }}
+      <p>{{ form.non_field_errors }}</p>
+
+      <p>{{ form.videofile.label_tag }} {{ form.videofile.help_text }}</p>
+
+      <p>
+        {{ form.videofile.errors }}
+        {{ form.videofile }}
+      </p>
+
+      <p><input type="submit" value="Upload"/></p>
+    </form>
+  </body>
+</html>

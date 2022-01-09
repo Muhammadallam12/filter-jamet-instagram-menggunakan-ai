@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Your video</title>
+  </head>
+
+  <body>
+    {% if video %}
+      <a href="http://{{ request.META.HTTP_HOST }}/media/{{ video.videoid }}.avi">{{ video.videofile.name }}</a>
+    {% else %}
+      <h1>Video Not Found</h1>
+    {% endif %}
+
+  </body>
+</html>

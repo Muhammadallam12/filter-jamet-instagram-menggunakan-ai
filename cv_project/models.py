@@ -1,0 +1,7 @@
+from django.db import models
+
+# Create your models here.
+
+class Video(models.Model):
+  videoid = models.AutoField(primary_key=True)
+  videofile = models.FileField(upload_to='.')
